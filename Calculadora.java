@@ -14,7 +14,7 @@ public class Calculadora {
         }
     }
 
-    // Método principal para testar
+    // Grupo Davi Dias, Lucas Pedrosa e Matheus.
     public static void main(String[] args) {
         Calculadora calc = new Calculadora();
 
