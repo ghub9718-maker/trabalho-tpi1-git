@@ -1,17 +1,25 @@
 public class Calculadora {
 
     /**
-     * Executa uma operação matemática básica.
-     * @param operacao Tipo da operação: "soma"
-     * @param a Primeiro número
-     * @param b Segundo número
-     * @return Resultado da operação
-     */
-    public double calcular(String operacao, int a, int b) {
-        switch (operacao.toLowerCase()) {
-            case "soma":
-                return a + b;
-            
+     
+Executa uma operação matemática básica.
+@param operacao Tipo da operação: "soma", "divisao"
+@param a Primeiro número
+@param b Segundo número
+@return Resultado da operação*/
+public double calcular(String operacao, int a, int b) {
+    switch (operacao.toLowerCase()) {
+        case "soma":
+            return a + b;
+
+            case "divisao":
+                if (b == 0) {
+                    throw new IllegalArgumentException("Divisão por zero não é permitida!");
+                }
+                return (double) a / b;
+
+            default:
+                throw new IllegalArgumentException("Operação inválida!");
         }
     }
 
@@ -20,6 +28,6 @@ public class Calculadora {
         Calculadora calc = new Calculadora();
 
         System.out.println("Soma: " + calc.calcular("soma", 10, 5));
+        System.out.println("Divisão: " + calc.calcular("divisao", 10, 5));
     }
 }
-
